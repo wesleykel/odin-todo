@@ -42,6 +42,7 @@ h1 {
 }
 .new-project-input {
   display: block;
+
   border: green solid 1px;
   width: 150px;
   height: 100px;
@@ -50,6 +51,16 @@ h1 {
   font-family: "Rubik", sans-serif;
   text-align: center;
 }
+.new-project-data {
+  display: grid;
+  grid-template-columns: repeat(auto);
+  border: red solid 2px;
+  width: 100%;
+
+  font-family: "Rubik", sans-serif;
+  text-align: center;
+}
+
 #show-input {
   display: hidden;
 }
