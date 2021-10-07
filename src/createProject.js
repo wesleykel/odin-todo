@@ -28,6 +28,9 @@ export function inputBoxFunction() {
   submitButton.addEventListener("click", getNewProjectData);
   submitButton.addEventListener("click", displayNewProject);
 
+  const cancelButton = document.createElement("button");
+  cancelButton.innerText = "Cancel";
+  cancelButton.addEventListener("click", closeMenu);
   const projectDescription = document.createElement("input", Text);
   projectDescription.id = "descrip-input";
   container.appendChild(inputBox);
@@ -37,6 +40,6 @@ export function inputBoxFunction() {
   projectTitle.insertAdjacentElement("afterend", projectDescriptionLabel);
   projectDescriptionLabel.insertAdjacentElement("afterend", projectDescription);
   projectDescription.insertAdjacentElement("afterend", submitButton);
-
+  submitButton.insertAdjacentElement("afterend", cancelButton);
   return inputBox;
 }

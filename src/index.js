@@ -2,11 +2,10 @@ import _ from "lodash";
 import "./style.css";
 import { inputBoxFunction } from "./createProject";
 import { createTitle } from "./createPage";
-
+import { loadOnPage } from "./loadOnPage";
+import { test } from "./test";
+import { deleteProject } from "./deleteProject";
 createTitle();
 inputBoxFunction();
-
-/*const inputButton = document
-  .getElementById("project-show")
-  .addEventListener("click", inputBoxFunction());
-*/
+loadOnPage();
+deleteProject();

@@ -18,8 +18,13 @@ export function createTitle() {
   addBox.className = "new-project";
   addBox.id = "project-show";
   addBox.innerText = " + New Project";
+
   container.appendChild(addBox);
   addBox.addEventListener("click", menuChange);
+
+  const projectBar = document.createElement("div");
+  projectBar.className = "project-bar";
+  container.insertAdjacentElement("afterend", projectBar);
 
   return appName;
 }

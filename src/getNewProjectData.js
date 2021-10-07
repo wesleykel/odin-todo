@@ -3,12 +3,22 @@ export function getNewProjectData() {
     this.title = title;
     this.description = description;
   };
+
+  let storedData = localStorage.getItem("Task");
+  let lclStorage = JSON.parse(storedData);
   const title = document.querySelector("#title-input").value;
   const descrip = document.querySelector("#descrip-input").value;
-
   const addNewProject = new newProject(`${title}`, `${descrip}`);
+
+  if (lclStorage !== null) {
+    projectData = lclStorage;
+    //console.log(projectData);
+    //console.log(lclStorage);
+  }
+
   projectData.push(addNewProject);
-  console.log(projectData);
-  window.localStorage.setItem("Task", JSON.stringify(projectData));
+  localStorage.setItem("Task", JSON.stringify(projectData));
+
+  lclStorage;
 }
-const projectData = [];
+let projectData = [];
