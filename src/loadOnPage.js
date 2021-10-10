@@ -1,3 +1,6 @@
+import { test } from "./test";
+
+import { deleteFunction } from "./deleteProject";
 export function loadOnPage() {
   const dataToDisplay = JSON.parse(window.localStorage.getItem("Task"));
   const placeToDisplayProjects = document.querySelector(".project-bar");
@@ -5,6 +8,7 @@ export function loadOnPage() {
     for (let j = 0; j < dataToDisplay.length; j++) {
       const newProjectBox = document.createElement("div");
       newProjectBox.className = "new-prj-box";
+      newProjectBox.dataset.projectNum = `${j}`;
       const prjNum = document.createElement("div");
       const title = document.createElement("div");
       const descrip = document.createElement("div");
@@ -25,9 +29,12 @@ export function loadOnPage() {
       viewBtn.id = "prj-btn-view";
       viewBtn.innerText = "view";
 
-      delBtn.className = "prj-btn";
-      delBtn.id = "prj-btn-del";
+      delBtn.className = "del-prj-btn";
+      delBtn.id = `prj-btn-del-${j + 1}`;
       delBtn.innerText = "delete project";
+      delBtn.addEventListener("click", test);
+      delBtn.dataset.btnNum = `${j}`;
+
       title.className = "displayed-data";
       descrip.className = "displayed-data";
       newProjectBox.id = "onscreen";

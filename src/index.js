@@ -8,4 +8,4 @@ import { deleteProject } from "./deleteProject";
 createTitle();
 inputBoxFunction();
 loadOnPage();
-deleteProject();
+//deleteProject();

@@ -1,5 +1,6 @@
 import { getNewProjectData } from "./getNewProjectData";
-
+import { deleteFunction } from "./deleteProject";
+import { test } from "./test";
 export const displayNewProject = () => {
   let storedData = localStorage.getItem("Task");
   let lclStorage = JSON.parse(storedData);
@@ -18,6 +19,7 @@ export const displayNewProject = () => {
   for (let j = 0; j < dataToDisplay.length; j++) {
     const newProjectBox = document.createElement("div");
     newProjectBox.className = "new-prj-box";
+    newProjectBox.dataset.projectNum = `${j}`;
     const prjNum = document.createElement("div");
     const title = document.createElement("div");
     const descrip = document.createElement("div");
@@ -38,9 +40,12 @@ export const displayNewProject = () => {
     viewBtn.id = "prj-btn-view";
     viewBtn.innerText = "view";
 
-    delBtn.className = "prj-btn";
-    delBtn.id = "prj-btn-del";
+    delBtn.className = "del-prj-btn";
+    delBtn.id = `prj-btn-del-${j + 1}`;
     delBtn.innerText = "delete project";
+    delBtn.addEventListener("click", test);
+    delBtn.dataset.btnNum = `${j}`;
+
     title.className = "displayed-data";
     descrip.className = "displayed-data";
     newProjectBox.id = "onscreen";
