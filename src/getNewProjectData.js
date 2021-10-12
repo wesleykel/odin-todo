@@ -12,8 +12,6 @@ export function getNewProjectData() {
 
   if (lclStorage !== null) {
     projectData = lclStorage;
-    //console.log(projectData);
-    //console.log(lclStorage);
   }
 
   projectData.push(addNewProject);

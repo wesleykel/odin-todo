@@ -1,6 +1,6 @@
-import { test } from "./test";
+//import { test } from "./test";
 
-import { deleteFunction } from "./deleteProject";
+import { deleteProject } from "./deleteProject";
 export function loadOnPage() {
   const dataToDisplay = JSON.parse(window.localStorage.getItem("Task"));
   const placeToDisplayProjects = document.querySelector(".project-bar");
@@ -32,7 +32,7 @@ export function loadOnPage() {
       delBtn.className = "del-prj-btn";
       delBtn.id = `prj-btn-del-${j + 1}`;
       delBtn.innerText = "delete project";
-      delBtn.addEventListener("click", test);
+      delBtn.addEventListener("click", deleteProject);
       delBtn.dataset.btnNum = `${j}`;
 
       title.className = "displayed-data";

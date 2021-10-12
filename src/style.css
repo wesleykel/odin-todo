@@ -8,6 +8,13 @@ body {
   *overflow: hidden;
 }
 
+#night-body {
+  background-color: black;
+  color: white;
+}
+#day-body {
+  background-color: white;
+}
 h1 {
   color: red;
   margin-bottom: 1vh;
@@ -23,12 +30,39 @@ h1 {
 
   width: 100%;
 }
+
+.nav-bar {
+  /*border: green 1px solid;*/
+  height: 3vh;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+
+#moon {
+  height: 4vh;
+  cursor: pointer;
+}
+
+#sun {
+  height: 4vh;
+  cursor: pointer;
+}
+
+#hide-moon-or-sun-icon {
+  display: none;
+}
+
 .project-bar {
   border: 1px solid purple;
-  width: 70%;
+  width: 90%;
   display: grid;
   grid-template-columns: auto auto auto;
   margin: 0 auto;
+  margin-top: 2%;
+  /*justify-content: center;*/
+  gap: 15px;
+  grid-auto-flow: row;
 }
 .new-project {
   display: block;
@@ -39,6 +73,7 @@ h1 {
   margin: 0 auto;
   font-family: "Rubik", sans-serif;
   text-align: center;
+  cursor: pointer;
 }
 
 #hide-modal {
@@ -49,7 +84,7 @@ h1 {
 }
 .new-project-input {
   display: block;
-
+  cursor: pointer;
   border: green solid 1px;
   width: 150px;
   height: 150px;

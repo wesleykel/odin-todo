@@ -1,4 +1,4 @@
-/*export function showMoon() {
+export function showMoon() {
   const moonIcon = document.getElementById("moon");
   const sunIcon = document.getElementById("hide-moon-or-sun-icon");
   const body = document.querySelector("body");
@@ -20,4 +20,3 @@ export function showSun() {
     body.id = "day-body";
   }
 }
-*/

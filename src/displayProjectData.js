@@ -1,5 +1,5 @@
 import { getNewProjectData } from "./getNewProjectData";
-import { deleteFunction } from "./deleteProject";
+import { deleteProject } from "./deleteProject";
 import { test } from "./test";
 export const displayNewProject = () => {
   let storedData = localStorage.getItem("Task");
@@ -43,7 +43,7 @@ export const displayNewProject = () => {
     delBtn.className = "del-prj-btn";
     delBtn.id = `prj-btn-del-${j + 1}`;
     delBtn.innerText = "delete project";
-    delBtn.addEventListener("click", test);
+    delBtn.addEventListener("click", deleteProject);
     delBtn.dataset.btnNum = `${j}`;
 
     title.className = "displayed-data";
