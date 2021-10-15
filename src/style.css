@@ -111,11 +111,15 @@ h1 {
 .to-do-show {
   border: olivedrab 2px solid;
   height: 50vh;
+  width: 60%;
+
+  margin: 0 auto;
 }
 
 .to-do-input-box {
   display: grid;
-  grid-template-columns: 20% 60% 20%;
+  grid-template-columns: 10% 60% 15% 15%;
+  border: 2px solid purple;
 }
 
 /*#show-input {

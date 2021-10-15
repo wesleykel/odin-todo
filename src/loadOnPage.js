@@ -1,7 +1,7 @@
 //import { test } from "./test";
 
 import { deleteProject } from "./deleteProject";
-import { switchBetween } from "./test";
+import { openToDo } from "./test";
 export function loadOnPage() {
   const dataToDisplay = JSON.parse(window.localStorage.getItem("Task"));
   const placeToDisplayProjects = document.querySelector(".project-bar");
@@ -25,7 +25,7 @@ export function loadOnPage() {
       addBtn.className = "prj-btn";
       addBtn.id = "prj-btn-add";
       addBtn.innerText = "add TO-DO";
-      addBtn.addEventListener("click", switchBetween);
+      addBtn.addEventListener("click", openToDo);
 
       viewBtn.className = "prj-btn";
       viewBtn.id = "prj-btn-view";

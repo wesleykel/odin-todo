@@ -1,8 +1,7 @@
-import { inputBoxFunction } from "./createProject";
 import { menuChange } from "./showMenu";
 import Moon from "./moon.png";
 import Sun from "./sun.png";
-import { test } from "./test";
+
 import { showSun } from "./nightMode";
 import { showMoon } from "./nightMode";
 
