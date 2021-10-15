@@ -1,6 +1,6 @@
 import { getNewProjectData } from "./getNewProjectData";
 import { deleteProject } from "./deleteProject";
-import { test } from "./test";
+import { switchBetween, test } from "./test";
 export const displayNewProject = () => {
   let storedData = localStorage.getItem("Task");
   let lclStorage = JSON.parse(storedData);
@@ -35,6 +35,7 @@ export const displayNewProject = () => {
     addBtn.className = "prj-btn";
     addBtn.id = "prj-btn-add";
     addBtn.innerText = "add TO-DO";
+    addBtn.addEventListener("click", switchBetween);
 
     viewBtn.className = "prj-btn";
     viewBtn.id = "prj-btn-view";

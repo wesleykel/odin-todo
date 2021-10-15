@@ -105,10 +105,22 @@ h1 {
   font-family: "Rubik", sans-serif;
   text-align: center;
 }
-
-#show-input {
-  display: hidden;
+.to-do-hidden {
+  display: none;
 }
+.to-do-show {
+  border: olivedrab 2px solid;
+  height: 50vh;
+}
+
+.to-do-input-box {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+}
+
+/*#show-input {
+  display: hidden;
+}*/
 
 .new-prj-box {
   margin: 0 auto;
@@ -116,6 +128,10 @@ h1 {
   width: 100%;
   height: 10vh;
   font-family: "Rubik", sans-serif;
+}
+
+.prj-btn-box-hidden {
+  display: none;
 }
 .displayed-data {
   border: lightpink 1px solid;
