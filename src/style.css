@@ -139,6 +139,8 @@ h1 {
 }
 .displayed-data {
   border: lightpink 1px solid;
+  height: 2.5vh;
+  text-align: center;
 }
 
 .prj-box-info {
@@ -147,7 +149,9 @@ h1 {
 }
 .prj-btn-box {
   display: grid;
-  grid-template-columns: auto auto auto;
-
+  grid-template-columns: auto auto;
+  height: 1.5vh;
   border: lawngreen 1px solid;
+  /*margin-top: 6%;
+  position: relative;*/
 }

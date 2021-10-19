@@ -7,6 +7,7 @@ export function showMoon() {
     moonIcon.id = "hide-moon-or-sun-icon";
     sunIcon.id = "sun";
     body.id = "night-body";
+    localStorage.setItem("dark", "false");
   }
 }
 
@@ -18,5 +19,14 @@ export function showSun() {
     moonIcon.id = "moon";
     sunIcon.id = "hide-moon-or-sun-icon";
     body.id = "day-body";
+    localStorage.setItem("dark", "true");
+  }
+}
+
+export function checkForDark() {
+  let weather = JSON.stringify(localStorage.getItem("dark"));
+  console.log(weather);
+  if (weather === "true") {
+    showSun();
   }
 }

@@ -1,49 +1,32 @@
-export function showList() {
-  const container = document.querySelector(".project-bar");
-  const todoListContainer = document.createElement("div");
+import { menuChangeAddingTodo } from "./showMenu";
 
-  todoListContainer.className = "to-do-hidden";
-  const title = document.createElement("h3");
-  title.innerText = "Project ";
-  todoListContainer.appendChild(title);
-  const toDoinputBox = document.createElement("div");
-  toDoinputBox.className = "to-do-input-box";
-  title.insertAdjacentElement("afterend", toDoinputBox);
-  const inputLegend = document.createElement("span");
-  inputLegend.innerText = "Add To -Do";
-  const input = document.createElement("input");
-  const submitBtn = document.createElement("button");
-  const closeBtn = document.createElement("button");
-  submitBtn.innerText = "Submit";
-  closeBtn.innerText = "Close";
-  closeBtn.addEventListener("click", close);
-  const todoList = document.createElement("ul");
+export function getNewTodoData() {
+  const newTodo = function (todo) {
+    this.todo = todo;
+  };
+  let todosArray = [];
+  let todoButton = document.getElementsByClassName("add-prj-btn");
+  console.log(todoButton);
+  for (let i = 0; i < todoButton.length; i++) {
+    todoButton[i].onclick = function (e) {
+      let addButNum = this.id;
 
-  container.insertAdjacentElement("afterend", todoListContainer);
-  toDoinputBox.appendChild(inputLegend);
-  toDoinputBox.appendChild(input);
-  toDoinputBox.appendChild(submitBtn);
-  toDoinputBox.appendChild(closeBtn);
-  toDoinputBox.insertAdjacentElement("afterend", todoList);
-}
+      let addNum = parseInt(addButNum.substr(12));
+      console.log(addNum);
 
-export function openToDo() {
-  const todoListContainer = document.querySelector(".to-do-hidden");
-  const projectsOnScreen = document.querySelector(".project-bar");
-  //todoListContainer.className = "to-do-show";
-  // projectsOnScreen.className = "to-do-hidden";
+      const storedData = localStorage.getItem(`Todo${[i]}`);
+      const lclStorage = JSON.parse(storedData);
+      const todoInput = document.querySelector("#todo_input").value;
+      todosArray[i] = new newTodo(`${todoInput}`);
 
-  if (todoListContainer.className === "to-do-hidden") {
-    todoListContainer.className = "to-do-show";
-    projectsOnScreen.className = "to-do-hidden";
+      if (lclStorage !== null) {
+        todoData = lclStorage;
+      }
+      todoData.push(todosArray[i]);
+      localStorage.setItem(`Todo${[i]}`, JSON.stringify(todoData));
+    };
   }
+  console.log(todoData);
 }
-export function close() {
-  const todoListContainer = document.querySelector(".to-do-show");
-  const projectsOnScreen = document.querySelector(".to-do-hidden");
 
-  if (todoListContainer.className === "to-do-show") {
-    todoListContainer.className = "to-do-hidden";
-    projectsOnScreen.className = "project-bar";
-  }
-}
+let todoData = [];

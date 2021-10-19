@@ -1,10 +1,9 @@
 import { menuChange } from "./showMenu";
 import Moon from "./moon.png";
 import Sun from "./sun.png";
-
 import { showSun } from "./nightMode";
 import { showMoon } from "./nightMode";
-
+import { checkForDark } from "./nightMode";
 export function createTitle() {
   const body = document.querySelector("body");
   //Project Name
@@ -34,7 +33,9 @@ export function createTitle() {
   sunIcon.className = "nav-icons";
   sunIcon.id = "hide-moon-or-sun-icon";
   sunIcon.addEventListener("click", showSun);
+
   nightMode.appendChild(moonIcon);
+
   nightMode.appendChild(sunIcon);
 
   // This creates what you see when the page first load

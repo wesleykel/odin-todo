@@ -1,7 +1,6 @@
-//import { test } from "./test";
-
 import { deleteProject } from "./deleteProject";
-import { openToDo } from "./test";
+import { openToDo } from "./accessTodoList";
+import { getNewTodoData } from "./test";
 export function loadOnPage() {
   const dataToDisplay = JSON.parse(window.localStorage.getItem("Task"));
   const placeToDisplayProjects = document.querySelector(".project-bar");
@@ -10,26 +9,30 @@ export function loadOnPage() {
       const newProjectBox = document.createElement("div");
       newProjectBox.className = "new-prj-box";
       newProjectBox.dataset.projectNum = `${j}`;
-      const prjNum = document.createElement("div");
-      const title = document.createElement("div");
-      const descrip = document.createElement("div");
+      const prjNum = document.createElement("h3");
+      const title = document.createElement("h3");
+      const descrip = document.createElement("h4");
       const infoBox = document.createElement("div");
       const buttonBox = document.createElement("div");
       const addBtn = document.createElement("button");
-      const viewBtn = document.createElement("button");
+      /*const viewBtn = document.createElement("button");*/
       const delBtn = document.createElement("button");
       infoBox.className = "prj-box-info";
 
       buttonBox.className = "prj-btn-box";
 
-      addBtn.className = "prj-btn";
-      addBtn.id = "prj-btn-add";
+      addBtn.className = "add-prj-btn";
+      addBtn.id = `prj-btn-add-${j}`;
       addBtn.innerText = "add TO-DO";
       addBtn.addEventListener("click", openToDo);
+      addBtn.addEventListener("click", getNewTodoData);
+      addBtn.dataset.btnNum = `${j}`;
 
-      viewBtn.className = "prj-btn";
+      addBtn.addEventListener("click", openToDo);
+
+      /*viewBtn.className = "prj-btn";
       viewBtn.id = "prj-btn-view";
-      viewBtn.innerText = "view";
+      viewBtn.innerText = "view";*/
 
       delBtn.className = "del-prj-btn";
       delBtn.id = `prj-btn-del-${j + 1}`;
@@ -53,8 +56,10 @@ export function loadOnPage() {
       infoBox.appendChild(descrip);
       infoBox.insertAdjacentElement("afterend", buttonBox);
       buttonBox.appendChild(addBtn);
-      buttonBox.appendChild(viewBtn);
+      /* buttonBox.appendChild(viewBtn);*/
       buttonBox.appendChild(delBtn);
     }
   }
 }
+openToDo;
+getNewTodoData;
